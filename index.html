@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Profile page</title>
+        <link rel="stylesheet" type="text/css" href="app.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="page">
+                
+                <img src="images/home_icon.png" alt="icon of the home page" class="nav_images">
+                <a href="index.html" class="home">Homepage</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="images/contact_icon.png" alt="icon of the contact page" class="nav_images">
+                <a href="contact.html" class="contact">Contact</a>
+                
+            </div>       
+        </div>
+
+        <div class="title">
+            
+            <img src="images/profile.jpg" alt="myself in an elegant picture" class="profile_image">
+            <div>
+                <p class="name"> <strong> Hi! <br> My name is Sílvia </strong><br> <p class="sub_name"> <em>I am an engineer and data scientist</em> </p>  </p>
+
+            </div>
+            
+                      
+        </div>
+
+        <div class="main">
+            <h1 class="section_title">About <br> me.</h1>
+            <p class="text">My name is Sílvia Moreno Garcia, I'm 22 and I am from the beautiful city of Barcelona, in Catalonia. <br> <br>
+                I am currently studying my MSc in Business Analytics at ESADE Business School, after finishing
+                my bachelor degree in Industrial Engineering at UPC. <br> <br>
+                If I had to describe myself using three words I would definitely say <em>social</em>, <em>highly analytical</em> and <em>extremely enthusiastic</em> !
+                <br> <br> <a href="AboutMe.html" class="contact">Learn more >></a>
+            </p>
+            
+        </div>
+
+        <div class="main">
+            <h1 class="section_title2">My <br> projects.</h1>
+            <p class="text2">This past semester, I have had the opportunity of being a part of TechLabs, a platform for young people from all disciplines
+                that provides state-of-the-art Tech-Skills to solve the problems of our digital times. <br> <br>
+                On this section I will upload some of the projects I have created during the study period on the Web Development track. 
+                <br> <br> <a href="MyProjects.html" class="contact">Explore >></a>
+            </p>
+            
+        </div>
+        
+        <div>
+            <h1 class="final">Thanks for visiting my webpage and don't forget to...</h1>
+            <div id="word">smile</div>
+
+        </div>
+
+        <script type="text/javascript">
+             var words = [ 
+                'dream', 
+                'smile', 
+                'work hard', 
+                'be passionate', 
+                'enjoy', 
+                'look for the unexpected', 
+                'love', 
+                'think big', 
+                'be inclusive', 
+                'laugh', 
+                'be inspired', 
+                'be constructive', 
+                'be proud of yourself'
+            ];
+            var color = 'rgb(0,0,0)'; 
+            var word = document.querySelector("#word");
+
+            var intervalID = window.setInterval(myCallback, 1000);
+
+            function myCallback() {
+                reset(); 
+                document.getElementById("word").innerHTML = this.word;
+                document.getElementById("word").style.color = this.color;
+                console.log(word)
+            }
+
+            function randomColor() {
+                var random1 = Math.floor(Math.random() * 255);
+                var random2 = Math.floor(Math.random() * 255);
+                var random3 = Math.floor(Math.random() * 255);
+                var newColor = 'rgb(' + random1 + ',' + random2 + ',' + random3 + ')';
+                return newColor;
+            }
+            
+            function wordNumber(){
+                    return Math.floor(Math.random() * 13);
+            }
+
+            function reset(){
+                color = randomColor();
+                word = words[wordNumber()]
+            }
+
+
+        </script>
+            
+
+       
+
+        
+    </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js" crossorigin></script>
+        <title>addition</title>
+        <style>
+            body {
+            background-color:  #20B2AA;
+            }
+
+            #app {
+            background-color: #F0FFFF; 
+            color: #20B2AA;
+            text-align: center;
+            margin: 100px 400px ;
+            border: 40px   solid #008B8B;
+            padding: 20px; 
+            }
+            h1 {
+                font-size: 80px;
+            }
+            #score {
+                font-size: 40px;
+                padding: 10px;
+            }
+            input{
+                font-size: 25px;
+            }
+            .back{
+                margin-top: 2%; 
+                margin-left: 5%; 
+            }
+            .images{
+                width: 5%; 
+            }
+        </style>
+    </head>
+    <body >
+        <div class="back">            
+            <a href="MyProjects.html"> <img src="images/arrow.png" alt="go back to homepage button" class="images"> </a>
+        </div>
+        <div id="app"></div>
+
+        <script type="text/babel">
+
+            class App extends React.Component {
+
+                constructor(props) {
+                    super(props);
+                    this.state = {
+                        num1: 1, 
+                        num2: 1, 
+                        score: 0, 
+                        response: ""
+                    }
+                }   
+                
+                render() {
+                    if (this.state.score >= 5) {
+                        return this.renderWin(); 
+                    } else {
+                        return this.renderProblem(); 
+                    }
+                }
+
+                renderProblem() {
+                    return (
+                        <div>
+                            <h1>{this.state.num1} + {this.state.num2}</h1>
+                            <input type= "text" onKeyPress = {this.inputKeyPress} onChange = {this.updateResponse} value = {this.state.response} />
+                            <div id="score">
+                                Score: {this.state.score}
+                            </div>
+                        </div>
+                    );
+                }
+
+                renderWin() {
+                    return (
+                        <h1>Has guanyat!</h1>
+                    ); 
+                }
+
+                updateResponse = (event) =>{
+                    this.setState({
+                        response: event.target.value
+                    })
+                }
+                inputKeyPress = (event) => {
+                    if (event.key === "Enter") {
+                        const answer = parseInt(this.state.response); 
+                        if (answer === this.state.num1 + this.state.num2) {
+                            this.setState({
+                                score:  this.state.score +1,
+                                num1 : Math.ceil(Math.random()*100),
+                                num2 : Math.ceil(Math.random()*100),
+                                response : ""
+                            })
+                        } else {
+                            this.setState({
+                                response: ""
+                            })
+                        }
+
+                    } 
+                }
+            }
+
+            ReactDOM.render(<App/>, document.querySelector("#app"));  
+
+        </script>
+    </body>
+</html>

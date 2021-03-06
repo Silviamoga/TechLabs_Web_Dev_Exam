@@ -1,0 +1,123 @@
+body {
+    margin:  0px; 
+    background-image: url('images/image.jpg');
+    background-repeat: no-repeat; 
+    background-color: #cccccc;
+    background-attachment: fixed;
+    background-size: 100%;
+  
+}
+
+
+
+.navbar{
+    background-color: rgb(58, 58, 58); 
+    margin: 0px; 
+    border: 10px solid  rgb(58, 58, 58); 
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000; 
+    
+}
+
+.page{
+    padding:0% 2%; 
+    display: flex; 
+    justify-content: center; 
+}
+.nav_images{
+    width: 1.5%;
+    margin: 0; 
+    border: 0; 
+}
+
+.home{
+    color: white; 
+    padding:0% 2%; 
+    text-decoration: none;
+    
+}
+.contact{
+    color: white; 
+    padding:0% 2%; 
+    text-decoration: none;
+}
+.title{
+    margin-top: 15%;
+    display: flex; 
+    justify-content: center;
+}
+
+.main{
+    margin: 10%; 
+    margin-top: 2%; 
+    background-color: rgba(211, 167, 25, 0.5);
+    border-radius: 10%;
+    padding: 3%;
+    text-align: center;
+    
+}
+.main2{
+    margin: 10%; 
+    margin-top: 2%; 
+    background-color: rgba(46, 144, 151, 0.5);
+    border-radius: 10%;
+    padding: 3%;
+    text-align: center;
+    
+}
+.pre_title{
+    font-size: 40px;
+    font-family: Brush Script MT, cursive ;
+}
+.title{
+    margin: 0%; 
+    margin-bottom: 5%;
+    color: white; 
+    font-size: 120px;
+    font-family: Helvetica;
+}
+
+.back{
+    margin-top: 8%; 
+    margin-left: 5%; 
+}
+.images{
+    width: 5%; 
+}
+.sub_title{
+    margin: 5%; 
+    color: white; 
+    font-size: 60px;
+    font-family: Helvetica;
+    text-align:left;
+}
+.game{
+    display: flex; 
+    justify-content: space-between; 
+    margin: 5%;         
+    text-align: justify;    
+    align-content: center;
+
+}
+.screen{
+    margin-left: 5%;
+    border: 5px solid white;
+    width: auto;
+    height: 150px;
+    overflow: hidden;
+    margin-top: 5%;
+}
+.text{
+    
+    color: white; 
+    padding-top: 3%;
+    justify-content: center; 
+    text-align: justify;
+    align-content: center;
+    width: 30%;
+    font-size: 20px;
+    text-decoration: none;
+}
